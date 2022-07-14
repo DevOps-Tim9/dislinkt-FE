@@ -1,0 +1,40 @@
+<div class="chat-container">
+  <mat-toolbar>
+    <span class="material-icons face-size"> face </span>
+    <p class="participant-name">
+      <b>{{ participant?.FirstName }} {{ participant?.LastName }}</b>
+    </p>
+  </mat-toolbar>
+  <div class="messages">
+    <div *ngFor="let item of messages">
+      <div
+        class="sent-message message"
+        *ngIf="item.from == userId; else elseBlock"
+      >
+        <p>{{ item.createdAt | date: "short" }}</p>
+        <p>{{ item.text }}</p>
+      </div>
+      <ng-template #elseBlock>
+        <div class="received-message message">
+          <p>{{ item.createdAt | date: "short" }}</p>
+          <p>{{ item.text }}</p>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  <div class="new-message">
+    <mat-form-field style="width: 100%;" appearance="outline">
+      <textarea
+        id="chat_message_input"
+        placeholder="Write message..."
+        rows="1"
+        matInput
+        class="message-input"
+        (keyup.enter)="createMessage()"
+        name="messageText"
+        [(ngModel)]="messageText"
+      >
+      </textarea>
+    </mat-form-field>
+  </div>
+</div>

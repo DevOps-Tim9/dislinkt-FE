@@ -1,0 +1,46 @@
+.chat-container {
+    height: 80vh;
+    position: relative;
+}
+
+.participant-name {
+    margin: 0px 0px 0px 5px;
+}
+
+.face-size {
+    font-size: 40px;
+}
+
+.sent-message {
+    float: right;
+}
+
+.received-message {
+    float: left;
+}
+
+.messages {
+    display: flex;
+    flex-direction:column-reverse;
+    overflow-y: scroll;
+    max-height: 60vh;
+}
+
+.message {
+    padding: 10px 30px 10px 10px;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.new-message {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 100%;
+}
+
+.message-input {
+    width: 100%;
+}

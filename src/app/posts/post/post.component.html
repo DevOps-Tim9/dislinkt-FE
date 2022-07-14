@@ -1,0 +1,50 @@
+<div>
+  <mat-card class="post-card">
+    <mat-card-content class="post-card-content">
+      <h2>{{ user?.Username }}</h2>
+      <img class="post-image" alt="" [src]="api_url + image?.Url" />
+      <div class="likes-buttons">
+        <span
+          (click)="pressedLike()"
+          [ngClass]="{
+            'material-icons like': true,
+            'clicked-like': isClickedLike()
+          }"
+          [class.disabled]="isClickedUnlike()"
+        >
+          thumb_up_off_alt
+        </span>
+        <p class="number-of-likes">{{ post.totalLikes }}</p>
+        <span
+          (click)="pressedUnlike()"
+          [ngClass]="{
+            'material-icons like': true,
+            'clicked-unlike': isClickedUnlike()
+          }"
+          [class.disabled]="isClickedLike()"
+        >
+          thumb_down_off_alt
+        </span>
+        <p class="number-of-likes">{{ post.totalUnlikes }}</p>
+      </div>
+      <div *ngFor="let comment of post.comments">
+        <app-comment [comment]="comment"></app-comment>
+      </div>
+      <div class="comment-input">
+        <mat-form-field class="comment-input" appearance="outline">
+          <textarea
+            id="post_description_input"
+            placeholder="Write comment..."
+            rows="1"
+            matInput
+            class="comment-input"
+            (keyup.enter)="createComment()"
+            name="comment"
+            [(ngModel)]="comment"
+          >
+          </textarea>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

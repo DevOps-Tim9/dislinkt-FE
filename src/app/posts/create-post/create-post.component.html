@@ -1,0 +1,57 @@
+<div class="content" role="main">
+  <mat-card>
+    <mat-card-content>
+      <div class="text-center border border-light p-3">
+        <p class="h4 mb-4">Create new post</p>
+        <form
+          class="center-form"
+          [formGroup]="registerForm"
+          (ngSubmit)="onSubmit()"
+        >
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Description</mat-label>
+              <textarea
+                id="post_description_input"
+                formControlName="description"
+                placeholder="Write some description..."
+                rows="5"
+                matInput
+              >
+              </textarea>
+            </mat-form-field>
+          </p>
+          <div class="form-group image-container">
+            <img
+              [src]="uploadedImage || '../assets/noimage.jpg'"
+              alt=""
+              [width]="200"
+              [height]="200"
+            />
+            <input
+              id="post_image_file_select"
+              type="file"
+              accept="image/jpeg, image/jpg"
+              (change)="chooseFile($event)"
+              [ngClass]="{
+                'is-invalid': submitted && f.file.errors
+              }"
+            />
+            <div *ngIf="submitted && f.file.errors" class="invalid-feedback">
+              <div *ngIf="f.file.errors.required">Image is required</div>
+            </div>
+          </div>
+          <div class="form-group button">
+            <button
+              id="create_post_button"
+              type="submit"
+              class="mat-raised-button mat-primary"
+            >
+              Create
+            </button>
+          </div>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

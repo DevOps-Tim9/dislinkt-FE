@@ -1,0 +1,48 @@
+.post-card {
+    width: 500px;
+}
+
+.post-card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-image {
+    width: 380px;
+    height: 380px;
+    align-self: center;
+}
+
+.likes-buttons {
+    margin-top: 20px;
+    display: flex;
+}
+
+.like {
+    width: 30px;
+}
+
+.clicked-like {
+    color: green;
+}
+
+.clicked-unlike {
+    color: red;
+}
+
+.like:hover{
+    cursor: pointer;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.number-of-likes {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.comment-input {
+    width: 100%;
+}

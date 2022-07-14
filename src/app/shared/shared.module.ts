@@ -5,15 +5,23 @@ import { MatMenuModule } from '@angular/material/menu';
 import { Snackbar } from './snackbar/snackbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { HeaderComponent } from './header/header.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HeaderComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
     MatMenuModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    MatToolbarModule
+  ],
+  exports: [
+    HeaderComponent,
   ],
   providers: [Snackbar]
 })
