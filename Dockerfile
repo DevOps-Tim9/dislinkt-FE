@@ -1,6 +1,6 @@
 FROM node:alpine3.11 as build
 
-ARG API_URL="apiUrl: 'http://localhost:9093/'"
+ARG API_URL="apiUrl: 'http://localhost:5001/'"
 
 WORKDIR /usr/src/server
 COPY . .
