@@ -23,7 +23,7 @@ export class PostComponent implements OnInit {
 
   api_url = environment.api_url;
 
-  userId = 1;
+  userId = 7;
 
   comment: string = "";
 

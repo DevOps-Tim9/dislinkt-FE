@@ -30,6 +30,7 @@ import { ChatComponent } from './chat/chat/chat.component';
 import { ConversationsComponent } from './chat/conversations/conversations.component';
 import { ConversationComponent } from './chat/conversation/conversation.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { SearchedUsersComponent } from './users/searched-users/searched-users.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     ChatsComponent,
     ChatComponent,
     ConversationsComponent,
-    ConversationComponent
+    ConversationComponent,
+    SearchedUsersComponent
   ],
   imports: [
     BrowserModule,

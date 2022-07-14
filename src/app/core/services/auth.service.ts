@@ -14,7 +14,7 @@ export class AuthService {
   private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
   register(user: UserRequest): Observable<any> {
-    return this.http.post(`${environment.api_url}register`, user, { headers: this.headers, responseType: 'json' });
+    return this.http.post(`${environment.api_url}users-ms/register`, user, { headers: this.headers, responseType: 'json' });
   }
 
   userProfile: any;

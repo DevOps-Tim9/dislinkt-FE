@@ -12,7 +12,9 @@ import { PostService } from 'src/app/core/services/post.service';
 })
 export class CreatePostComponent implements OnInit {
 
-  post: Post = { id: 0, comments: [], description: "", imageId: 0, likes: [], totalLikes: 0, totalUnlikes: 0, userId: 1 };
+  userId = 7;
+
+  post: Post = { id: 0, comments: [], description: "", imageId: 0, likes: [], totalLikes: 0, totalUnlikes: 0, userId: this.userId };
 
   registerForm: FormGroup;
 
@@ -60,14 +62,14 @@ export class CreatePostComponent implements OnInit {
   private create(formData: FormData): void {
     this.postService.post(formData).subscribe(res => {
       if (res) {
-        this.goBack(res.id);
+        this.goBack();
       }
     }, err => {
       console.log(err);
     });
   }
 
-  private goBack(id: number): void {
+  private goBack(): void {
     this.router.navigateByUrl(`/posts`);
   }
 

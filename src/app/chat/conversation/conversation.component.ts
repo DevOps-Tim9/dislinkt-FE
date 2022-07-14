@@ -14,7 +14,7 @@ export class ConversationComponent implements OnInit {
 
   sender: any;
 
-  userId = 4;
+  userId = 7;
 
   participantInConversation: any;
 
