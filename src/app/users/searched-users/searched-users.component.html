@@ -1,0 +1,7 @@
+<div class="users-container">
+  <div class="users-dropdown" *ngFor="let user of users">
+    <p class="user" (mousedown)="selectedUser.emit(user)">
+      {{ user.FirstName }} {{ user.LastName }}
+    </p>
+  </div>
+</div>
