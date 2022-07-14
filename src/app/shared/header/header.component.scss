@@ -1,0 +1,21 @@
+.left {
+    width: 50%;
+}
+
+.right {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.person-icon:hover {
+    cursor: pointer;
+}
+
+.navigation-link {
+    margin: 0px 10px 0px 10px;
+}
+
+.navigation-link:hover {
+    cursor: pointer;
+}

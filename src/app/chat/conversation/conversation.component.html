@@ -1,0 +1,17 @@
+<div class="contianer">
+  <div>
+    <span class="material-icons face-size"> face </span>
+  </div>
+  <div class="right">
+    <div>
+      <b>
+        {{ participantInConversation?.FirstName }}
+        {{ participantInConversation?.LastName }}
+      </b>
+    </div>
+    <div>
+      <b>{{ sender == userId ? "You: " : "" }}</b>
+      {{ conversation?.LastMessage?.text }}
+    </div>
+  </div>
+</div>

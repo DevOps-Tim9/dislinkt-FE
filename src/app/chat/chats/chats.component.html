@@ -1,0 +1,11 @@
+<div class="my-container">
+  <div class="conversations">
+    <h1><b>Chats</b></h1>
+    <div *ngFor="let item of conversations" (click)="selectChat(item)">
+      <app-conversation [conversation]="item"></app-conversation>
+    </div>
+  </div>
+  <div class="chat">
+    <app-chat *ngIf="chat != null" [chat]="chat"></app-chat>
+  </div>
+</div>

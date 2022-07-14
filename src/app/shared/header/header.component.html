@@ -1,0 +1,17 @@
+<p>
+  <mat-toolbar>
+    <div class="left">
+      <span routerLink="/home" class="navigation-link">Dislinkt</span>
+      <span routerLink="/home" class="navigation-link">Home</span>
+      <span routerLink="/chat" class="navigation-link">Chat</span>
+    </div>
+    <div class="right">
+      <span [matMenuTriggerFor]="menu" class="material-icons person-icon">
+        person
+      </span>
+      <mat-menu #menu="matMenu">
+        <a routerLink="/posts-my" mat-menu-item>My posts</a>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+</p>

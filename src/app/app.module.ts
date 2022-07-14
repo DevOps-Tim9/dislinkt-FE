@@ -9,23 +9,43 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon'
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatCardModule} from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
+import { CreatePostComponent } from './posts/create-post/create-post.component';
+import { MyPostsComponent } from './posts/my-posts/my-posts.component';
+import { PostComponent } from './posts/post/post.component';
+import { FormsModule } from '@angular/forms';
+import { CommentComponent } from './posts/comment/comment.component';
+import { FriendsPostsComponent } from './posts/friends-posts/friends-posts.component';
+import { ChatsComponent } from './chat/chats/chats.component';
+import { ChatComponent } from './chat/chat/chat.component';
+import { ConversationsComponent } from './chat/conversations/conversations.component';
+import { ConversationComponent } from './chat/conversation/conversation.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
     AppComponent,
     CallbackComponent,
     HomepageComponent,
-    RegisterComponent
+    RegisterComponent,
+    CreatePostComponent,
+    MyPostsComponent,
+    PostComponent,
+    CommentComponent,
+    FriendsPostsComponent,
+    ChatsComponent,
+    ChatComponent,
+    ConversationsComponent,
+    ConversationComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +63,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatRadioModule,
     MatSelectModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
