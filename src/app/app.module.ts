@@ -30,7 +30,7 @@ import { ChatComponent } from './chat/chat/chat.component';
 import { ConversationsComponent } from './chat/conversations/conversations.component';
 import { ConversationComponent } from './chat/conversation/conversation.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { SearchedUsersComponent } from './users/searched-users/searched-users.component';
+import { UserProfileComponent } from './users/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +47,7 @@ import { SearchedUsersComponent } from './users/searched-users/searched-users.co
     ChatComponent,
     ConversationsComponent,
     ConversationComponent,
-    SearchedUsersComponent
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,

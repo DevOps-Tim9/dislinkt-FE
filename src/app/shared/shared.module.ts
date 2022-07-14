@@ -7,10 +7,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { HeaderComponent } from './header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { SearchedUsersComponent } from './searched-users/searched-users.component';
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    SearchedUsersComponent
   ],
   imports: [
     CommonModule,
@@ -18,10 +22,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatMenuModule,
     MatIconModule,
     MatDividerModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatInputModule,
+    FormsModule,
   ],
   exports: [
     HeaderComponent,
+    SearchedUsersComponent
   ],
   providers: [Snackbar]
 })

@@ -16,6 +16,10 @@ export class UserService {
     return this.http.get<any>(`${environment.api_url}users-ms/users/${id}`);
   }
 
+  getByUsername(username: string): Observable<any[]> {
+    return this.http.get<any>(`${environment.api_url}users-ms/users/username?username=${username}`);
+  }
+
   getFollowers(id: any): Observable<any[]> {
     return this.http.get<any[]>(`${environment.api_url}users-ms/user/${id}/followers`);
   }
