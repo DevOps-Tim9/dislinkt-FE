@@ -20,4 +20,8 @@ export class UserService {
     return this.http.get<any[]>(`${environment.api_url}users-ms/user/${id}/followers`);
   }
 
+  getFollowing(id: any): Observable<any[]> {
+    return this.http.get<any[]>(`${environment.api_url}users-ms/user/${id}/following`);
+  }
+
 }

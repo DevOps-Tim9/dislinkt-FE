@@ -11,10 +11,12 @@ export class MyPostsComponent implements OnInit {
 
   posts: Post[] = [];
 
+  userId = 7;
+
   constructor(
     private postService: PostService
   ) {
-    this.postService.getAllById(1).subscribe((res) => this.posts = res);
+    this.postService.getAllById(this.userId).subscribe((res) => this.posts = res);
   }
 
   ngOnInit(): void {

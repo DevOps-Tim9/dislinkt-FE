@@ -12,7 +12,9 @@ import { PostService } from 'src/app/core/services/post.service';
 })
 export class CreatePostComponent implements OnInit {
 
-  post: Post = { id: 0, comments: [], description: "", imageId: 0, likes: [], totalLikes: 0, totalUnlikes: 0, userId: 1 };
+  userId = 7;
+
+  post: Post = { id: 0, comments: [], description: "", imageId: 0, likes: [], totalLikes: 0, totalUnlikes: 0, userId: this.userId };
 
   registerForm: FormGroup;
 

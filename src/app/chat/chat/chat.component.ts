@@ -14,7 +14,7 @@ export class ChatComponent implements OnInit {
   @Input()
   chat: Conversation
 
-  userId = 4;
+  userId = 7;
 
   participant: any;
 
