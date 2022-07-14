@@ -62,14 +62,14 @@ export class CreatePostComponent implements OnInit {
   private create(formData: FormData): void {
     this.postService.post(formData).subscribe(res => {
       if (res) {
-        this.goBack(res.id);
+        this.goBack();
       }
     }, err => {
       console.log(err);
     });
   }
 
-  private goBack(id: number): void {
+  private goBack(): void {
     this.router.navigateByUrl(`/posts`);
   }
 
