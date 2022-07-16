@@ -7,6 +7,7 @@ import { CreatePostComponent } from './posts/create-post/create-post.component';
 import { FriendsPostsComponent } from './posts/friends-posts/friends-posts.component';
 import { MyPostsComponent } from './posts/my-posts/my-posts.component';
 import { RegisterComponent } from './register/register.component';
+import { UserProfileComponent } from './users/user-profile/user-profile.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'chat',
     component: ChatsComponent,
+  },
+  {
+    path: 'users/:id',
+    component: UserProfileComponent,
   },
   {
     path: '**',

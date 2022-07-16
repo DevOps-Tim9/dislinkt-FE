@@ -1,0 +1,18 @@
+.users-container {
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+.users-dropdown {
+    height: 50px;
+    padding: 5px 5px 5px 15px;
+    font-size: 18px;
+    background-color: #F5F5F5;
+    display: flex;
+    align-items: center;
+}
+
+.user {
+    margin: 0px;
+    padding: 0px;
+}

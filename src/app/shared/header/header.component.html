@@ -6,6 +6,32 @@
       <span routerLink="/chat" class="navigation-link">Chat</span>
     </div>
     <div class="right">
+      <div>
+        <mat-form-field
+          style="width: 250px"
+          class="mat-search-users"
+          appearance="outline"
+        >
+          <input
+            id="search_users_input"
+            placeholder="Search for users..."
+            matInput
+            class="search-users-input"
+            [ngModel]="searchValue"
+            (ngModelChange)="searchUsers($event)"
+            name="searchValue"
+            (focus)="showSearchedUsers = true"
+            (focusout)="showSearchedUsers = false"
+          />
+        </mat-form-field>
+        <div style="position: relative; z-index: 1;" *ngIf="showSearchedUsers">
+          <app-searched-users
+            class="searched-users"
+            [users]="searchedUsers"
+            (selectedUser)="selectedUser($event)"
+          ></app-searched-users>
+        </div>
+      </div>
       <span [matMenuTriggerFor]="menu" class="material-icons person-icon">
         person
       </span>

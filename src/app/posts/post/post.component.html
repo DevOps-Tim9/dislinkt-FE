@@ -1,7 +1,7 @@
 <div>
   <mat-card class="post-card">
     <mat-card-content class="post-card-content">
-      <h2>{{ user?.Username }}</h2>
+      <h2 [routerLink]="'/users/' + user.ID" class="user-name-post">{{ user?.Username }}</h2>
       <img class="post-image" alt="" [src]="api_url + image?.Url" />
       <div class="likes-buttons">
         <span
