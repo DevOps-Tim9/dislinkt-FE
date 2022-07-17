@@ -8,6 +8,9 @@ import { FriendsPostsComponent } from './posts/friends-posts/friends-posts.compo
 import { MyPostsComponent } from './posts/my-posts/my-posts.component';
 import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './users/user-profile/user-profile.component';
+import {FollowingComponent} from "./following/following.component";
+import {FollowersComponent} from "./followers/followers.component";
+import {RequestsComponent} from "./requests/requests.component";
 
 const routes: Routes = [
   {
@@ -33,6 +36,18 @@ const routes: Routes = [
   {
     path: 'home',
     component: FriendsPostsComponent,
+  },
+  {
+    path: 'following',
+    component: FollowingComponent,
+  },
+  {
+    path: 'followers',
+    component: FollowersComponent,
+  },
+  {
+    path: 'requests',
+    component: RequestsComponent,
   },
   {
     path: 'chat',
