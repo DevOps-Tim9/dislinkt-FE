@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { MyErrorStateMatcher } from 'src/app/core/error-matchers/ErrorStateMatcher';
 import { Post } from 'src/app/core/models/request/post.model';
 import { PostService } from 'src/app/core/services/post.service';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-create-post',
@@ -12,9 +13,9 @@ import { PostService } from 'src/app/core/services/post.service';
 })
 export class CreatePostComponent implements OnInit {
 
-  userId = 7;
+  userId: number;
 
-  post: Post = { id: 0, comments: [], description: "", imageId: 0, likes: [], totalLikes: 0, totalUnlikes: 0, userId: this.userId };
+  post: Post = { id: 0, comments: [], description: "", imageId: 0, likes: [], totalLikes: 0, totalUnlikes: 0, userId: null };
 
   registerForm: FormGroup;
 
@@ -25,6 +26,7 @@ export class CreatePostComponent implements OnInit {
   matcher: MyErrorStateMatcher = new MyErrorStateMatcher();
 
   constructor(
+    private userService: UserService,
     private postService: PostService,
     private formBuilder: FormBuilder,
     private router: Router
@@ -36,7 +38,9 @@ export class CreatePostComponent implements OnInit {
       file: [null, Validators.required]
     });
 
-
+    this.userService.getByEmail(localStorage['mail']).subscribe(res => {
+      this.userId = res['ID'];
+    });
   }
 
   get f(): { [key: string]: AbstractControl; } { return this.registerForm.controls; }
@@ -48,6 +52,7 @@ export class CreatePostComponent implements OnInit {
       return;
     }
 
+    this.post.userId = this.userId;
     this.post.description = this.registerForm.get('description').value;
 
     const formData = new FormData();

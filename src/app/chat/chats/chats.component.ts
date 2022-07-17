@@ -12,7 +12,7 @@ export class ChatsComponent implements OnInit {
 
   conversations: Conversation[] = [];
 
-  userId = 7;
+  userId: number;
 
   chat: Conversation = null;
 
@@ -30,10 +30,14 @@ export class ChatsComponent implements OnInit {
     private conversationService: ConversationService,
     private userService: UserService
   ) {
-    this.conversationService.getConversations(this.userId).subscribe(res => this.conversations = res);
-    this.userService.getFollowing(this.userId).subscribe(res => {
-      this.following = res;
-      this.following.forEach(item => this.getUser(item));
+    this.userService.getByEmail(localStorage['mail']).subscribe(res => {
+      this.userId = res['ID'];
+
+      this.conversationService.getConversations(this.userId).subscribe(res => this.conversations = res);
+      this.userService.getFollowing(this.userId).subscribe(res => {
+        this.following = res;
+        this.following.forEach(item => this.getUser(item));
+      });
     });
   }
 

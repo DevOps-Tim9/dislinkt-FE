@@ -14,7 +14,7 @@ export class ConversationComponent implements OnInit {
 
   sender: any;
 
-  userId = 7;
+  userId: number;
 
   participantInConversation: any;
 
@@ -23,15 +23,19 @@ export class ConversationComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.userService.getById(this.conversation?.LastMessage.from).subscribe(res => {
-      this.sender = res;
+    this.userService.getByEmail(localStorage['mail']).subscribe(res => {
+      this.userId = res['ID'];
 
-      if (this.conversation.LastMessage.from == this.userId) {
-        this.userService.getById(this.conversation.LastMessage.to).subscribe(user => this.participantInConversation = user);
-      }
-      else {
-        this.participantInConversation = res;
-      }
+      this.userService.getById(this.conversation?.LastMessage.from).subscribe(res => {
+        this.sender = res;
+
+        if (this.conversation.LastMessage.from == this.userId) {
+          this.userService.getById(this.conversation.LastMessage.to).subscribe(user => this.participantInConversation = user);
+        }
+        else {
+          this.participantInConversation = res;
+        }
+      });
     });
   }
 
