@@ -28,4 +28,12 @@ export class UserService {
     return this.http.get<any[]>(`${environment.api_url}users-ms/user/${id}/following`);
   }
 
+  getRequests(id: number): Observable<any[]> {
+    return this.http.get<any[]>(`${environment.api_url}users-ms/requests/${id}`);
+  }
+
+  getByEmail(mail: string): Observable<any[]> {
+    return this.http.get<any[]>(`${environment.api_url}users-ms/users?email=${mail}`);
+  }
+
 }

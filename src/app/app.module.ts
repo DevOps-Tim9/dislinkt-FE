@@ -31,6 +31,11 @@ import { ConversationsComponent } from './chat/conversations/conversations.compo
 import { ConversationComponent } from './chat/conversation/conversation.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { UserProfileComponent } from './users/user-profile/user-profile.component';
+import { FollowingComponent } from './following/following.component';
+import { FollowersComponent } from './followers/followers.component';
+import { RequestsComponent } from './requests/requests.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -48,27 +53,32 @@ import { UserProfileComponent } from './users/user-profile/user-profile.componen
     ConversationsComponent,
     ConversationComponent,
     UserProfileComponent,
+    FollowingComponent,
+    FollowersComponent,
+    RequestsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatIconModule,
-    MatInputModule,
-    MatSnackBarModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatRadioModule,
-    MatSelectModule,
-    CoreModule,
-    SharedModule,
-    FormsModule,
-    MatToolbarModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatIconModule,
+        MatInputModule,
+        MatSnackBarModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatRadioModule,
+        MatSelectModule,
+        CoreModule,
+        SharedModule,
+        FormsModule,
+        MatToolbarModule,
+        MatTableModule,
+        MatPaginatorModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
