@@ -12,13 +12,17 @@ export class FriendsPostsComponent implements OnInit {
 
   posts: Post[] = [];
 
-  userId = 7;
+  userId: number;
 
   constructor(
     private postService: PostService,
     private userService: UserService
   ) {
-    this.userService.getFollowing(this.userId).subscribe(followers => this.postService.getAllByIds(followers.map(item => item.following_id)).subscribe((res) => this.posts = res));
+    this.userService.getByEmail(localStorage['mail']).subscribe(res => {
+      this.userId = res['ID'];
+      
+      this.userService.getFollowing(this.userId).subscribe(followers => this.postService.getAllByIds(followers.map(item => item.following_id)).subscribe((res) => this.posts = res));
+    });
   }
 
   ngOnInit(): void {

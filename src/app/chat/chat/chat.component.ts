@@ -14,7 +14,7 @@ export class ChatComponent implements OnInit {
   @Input()
   chat: Conversation
 
-  userId = 7;
+  userId: number;
 
   participant: any;
 
@@ -29,7 +29,12 @@ export class ChatComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userService.getById(this.chat?.User1 == this.userId ? this.chat?.User2 : this.chat?.User1).subscribe(res => this.participant = res);
+    debugger;
+    this.userService.getByEmail(localStorage['mail']).subscribe(res => {
+      this.userId = res['ID'];
+
+      this.userService.getById(this.chat?.User1 == this.userId ? this.chat?.User2 : this.chat?.User1).subscribe(res => this.participant = res);
+    });
     this.conversationService.getMessages(this.chat?.ID).subscribe(res => this.messages = res);
   }
 

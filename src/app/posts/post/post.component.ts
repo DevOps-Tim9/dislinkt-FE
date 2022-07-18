@@ -23,7 +23,7 @@ export class PostComponent implements OnInit {
 
   api_url = environment.api_url;
 
-  userId = 7;
+  userId: number;
 
   comment: string = "";
 
@@ -35,8 +35,13 @@ export class PostComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.imageService.getById(this.post?.imageId).subscribe(res => this.image = res);
-    this.userService.getById(this.post?.userId).subscribe(res => this.user = res);
+    this.userService.getByEmail(localStorage['mail']).subscribe(res => {
+      this.userId = res['ID'];
+
+
+      this.imageService.getById(this.post?.imageId).subscribe(res => this.image = res);
+      this.userService.getById(this.post?.userId).subscribe(res => this.user = res);
+    });
   }
 
   isClickedLike(): boolean {
