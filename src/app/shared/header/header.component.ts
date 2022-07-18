@@ -12,6 +12,7 @@ import { interval } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
   notifications = [];
+  permissions = [];
 
   searchValue: string = "";
 
@@ -31,6 +32,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.permissions = this.authService.role;
     this.getNotifications();
   }
 
