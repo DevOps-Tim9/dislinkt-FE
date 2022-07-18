@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="right">
+      <h1>Your profile info</h1>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" style="text-align: center;">
+        <mat-form-field appearance="standard">
+          <mat-label>Username</mat-label>
+          <input formControlName="username" matInput placeholder="Username" [errorStateMatcher]="matcher">
+          <mat-icon matSuffix>person</mat-icon>
+          <mat-error *ngIf="f.username.errors?.required">Username is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+          <mat-label>First name</mat-label>
+          <input formControlName="firstName" matInput placeholder="First name" [errorStateMatcher]="matcher">
+          <mat-icon matSuffix>person</mat-icon>
+          <mat-error *ngIf="f.firstName.errors?.required">First name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+          <mat-label>Last name</mat-label>
+          <input formControlName="lastName" matInput placeholder="Last name" [errorStateMatcher]="matcher">
+          <mat-icon matSuffix>person</mat-icon>
+          <mat-error *ngIf="f.lastName.errors?.required">Last name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput placeholder="Email" [errorStateMatcher]="matcher">
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-error *ngIf="f.email.errors?.required">Email is required</mat-error>
+          <mat-error *ngIf="f.email.errors?.email">Email not valid</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+          <mat-label>Phone number</mat-label>
+          <input formControlName="phoneNumber" matInput placeholder="Phone number" [errorStateMatcher]="matcher">
+          <mat-icon matSuffix>phone</mat-icon>
+          <mat-error *ngIf="f.phoneNumber.errors?.required">Phone number is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+            <mat-label>Date of birth</mat-label>
+            <input formControlName="dateOfBirth" matInput [matDatepicker]="picker" (dateChange)="dateChanged($event)" [matDatepickerFilter]="filterDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="f.dateOfBirth.errors?.required || invalidDateFormat">Date is not valid</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+            <mat-label>Gender</mat-label>
+            <mat-select formControlName="gender">
+                <mat-option *ngFor="let g of genders" [value]="g.value">
+                    {{g.label}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+            <mat-label>Biography</mat-label>
+            <input formControlName="biography" matInput placeholder="Biography" [errorStateMatcher]="matcher">
+            <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+            <mat-label>Education</mat-label>
+            <input formControlName="education" matInput placeholder="Education" [errorStateMatcher]="matcher">
+            <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+            <mat-label>Work experience</mat-label>
+            <input formControlName="workExperience" matInput placeholder="Work experience" [errorStateMatcher]="matcher">
+            <mat-icon matSuffix>person</mat-icon>
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Skills</mat-label>
+            <input formControlName="skills" matInput placeholder="Skills" [errorStateMatcher]="matcher">
+            <mat-icon matSuffix>person</mat-icon>
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Interests</mat-label>
+            <input formControlName="interests" matInput placeholder="Interests" [errorStateMatcher]="matcher">
+            <mat-icon matSuffix>person</mat-icon>
+          </mat-form-field>
+          
+            <mat-checkbox formControlName="public" (change)="onChangePublic($event)">
+                Public profile
+            </mat-checkbox>
+        <button class="button1">Save changes</button>
+      </form>
+    </div>
+</div>

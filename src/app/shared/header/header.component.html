@@ -32,14 +32,20 @@
           ></app-searched-users>
         </div>
       </div>
+      <span (click)="goToNotifications()" class="material-icons notifications-icon">
+        notifications
+      </span>
       <span [matMenuTriggerFor]="menu" class="material-icons person-icon">
         person
       </span>
       <mat-menu #menu="matMenu">
+        <a routerLink="/my-profile" mat-menu-item>My profile info</a>
         <a routerLink="/posts-my" mat-menu-item>My posts</a>
         <a routerLink="/following" mat-menu-item>Following</a>
         <a routerLink="/followers" mat-menu-item>Followers</a>
         <a routerLink="/requests" mat-menu-item>Requests</a>
+        <a routerLink="/notification-settings" mat-menu-item>Notification settings</a>
+        <a (click)="logout()" mat-menu-item>Log out</a>
       </mat-menu>
     </div>
   </mat-toolbar>
