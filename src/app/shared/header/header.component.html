@@ -4,7 +4,7 @@
       <span routerLink="/home" class="navigation-link">Dislinkt</span>
       <span routerLink="/home" class="navigation-link">Home</span>
       <span routerLink="/chat" class="navigation-link">Chat</span>
-      <span routerLink="/events" class="navigation-link">Events</span>
+      <span routerLink="/events" *ngIf="permissions.includes('get:events')" class="navigation-link">Events</span>
     </div>
     <div class="right">
       <div>

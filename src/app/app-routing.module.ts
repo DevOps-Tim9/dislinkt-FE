@@ -15,11 +15,14 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { NotificationSettingsComponent } from './notification-settings/notification-settings.component';
 import { EventsComponent } from './events/events.component';
+import { RoleGuard } from './core/guards/role.guard';
+import { NoAuthGuard } from './core/guards/no-auth.guard';
 
 const routes: Routes = [
   {
     path: 'homepage',
     component: CallbackComponent,
+    canActivate: [NoAuthGuard],
   },
   {
     path: 'certificates',
@@ -28,6 +31,7 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+    canActivate: [NoAuthGuard],
   },
   {
     path: 'posts-create',
@@ -56,6 +60,10 @@ const routes: Routes = [
   {
     path: 'events',
     component: EventsComponent,
+    canActivate: [RoleGuard],
+    data: {
+      expectedRoles: 'get:events'
+    }
   },
   {
     path: 'following',
