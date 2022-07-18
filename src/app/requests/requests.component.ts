@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {UserService} from "../core/services/user.service";
 import {FollowingService} from "../core/services/following.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-requests',
@@ -15,7 +16,8 @@ export class RequestsComponent implements OnInit {
   displayedColumns:  string[] = ['name','username', 'email', 'approve']
   constructor(
     private userService: UserService,
-    private followingService: FollowingService
+    private followingService: FollowingService,
+    private router: Router
   ) { }
 
 
@@ -70,6 +72,10 @@ export class RequestsComponent implements OnInit {
         alert("Request successfully " + (status==1?"accepted":"rejected"))
       }
     )
+  }
+
+  onCLickUser(user){
+    this.router.navigateByUrl(`/users/${user.ID}`);
   }
 
 }

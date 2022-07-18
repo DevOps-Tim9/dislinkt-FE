@@ -7,6 +7,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {FollowingService} from "../core/services/following.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-following',
@@ -21,7 +22,8 @@ export class FollowingComponent implements OnInit {
   mainUserID = -1;
   constructor(
     private userService: UserService,
-    private followingService: FollowingService
+    private followingService: FollowingService,
+    private router: Router
   ) { }
 
 
@@ -91,6 +93,11 @@ export class FollowingComponent implements OnInit {
         this.convertStatus(user)
       }
     })
+  }
+
+
+  onCLickUser(user){
+    this.router.navigateByUrl(`/users/${user.ID}`);
   }
 
 }
