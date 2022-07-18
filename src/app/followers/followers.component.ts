@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {UserService} from "../core/services/user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-followers',
@@ -12,7 +13,8 @@ export class FollowersComponent implements OnInit {
   followers= []
   displayedColumns:  string[] = ['name','username', 'email']
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -30,13 +32,17 @@ export class FollowersComponent implements OnInit {
 
   findFollowers(following){
     following.forEach(following =>{
-      this.userService.getById(following['following_id']).subscribe(
+      this.userService.getById(following['followers_id']).subscribe(
         user => {
           this.followers.push(user)
           this.dataSource = new MatTableDataSource(this.followers)
         }
       )
     });
+  }
+
+  onCLick(user){
+    this.router.navigateByUrl(`/users/${user.ID}`);
   }
 
 }

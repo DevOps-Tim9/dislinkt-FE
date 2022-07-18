@@ -1,4 +1,9 @@
 <div>
+  <mat-card>
+    <mat-card-title>{{user?.FirstName + " " + user?.LastName}}
+    <button class="followBtn" mat-flat-button color="primary" (click)="onClickFollowButton()" [disabled]="buttonDisable">{{buttonDescription}}</button>
+    </mat-card-title>
+  </mat-card>
   <div class="post" *ngFor="let item of posts">
     <app-post [post]="item"></app-post>
   </div>
