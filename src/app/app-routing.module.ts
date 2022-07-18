@@ -14,6 +14,7 @@ import {RequestsComponent} from "./requests/requests.component";
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { NotificationSettingsComponent } from './notification-settings/notification-settings.component';
+import { EventsComponent } from './events/events.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'notifications',
     component: NotificationsComponent,
+  },
+  {
+    path: 'events',
+    component: EventsComponent,
   },
   {
     path: 'following',

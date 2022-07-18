@@ -40,6 +40,10 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NotificationSettingsComponent } from './notification-settings/notification-settings.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { EventsComponent } from './events/events.component';
+import {MatListModule} from '@angular/material/list';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -62,7 +66,8 @@ import { NotificationsComponent } from './notifications/notifications.component'
     RequestsComponent,
     MyProfileComponent,
     NotificationSettingsComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    EventsComponent
   ],
     imports: [
         BrowserModule,
@@ -85,7 +90,10 @@ import { NotificationsComponent } from './notifications/notifications.component'
         MatToolbarModule,
         MatTableModule,
         MatPaginatorModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatListModule,
+        MatBadgeModule,
+        MatSortModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

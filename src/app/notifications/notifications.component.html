@@ -1,1 +1,12 @@
-<p>notifications works!</p>
+<div class="container">
+    <div class="heading">
+        <h1>Notifications</h1>
+        <button class="button1" (click)="clear()">Clear notifications</button>
+    </div>
+    <p *ngIf="notifications.length === 0">There is no new notifications.</p>
+    <mat-list *ngIf="notifications.length !== 0">
+        <mat-list-item *ngFor="let n of notifications">
+          {{n.Message}}
+        </mat-list-item>
+    </mat-list>
+</div>
