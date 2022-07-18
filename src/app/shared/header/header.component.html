@@ -4,6 +4,7 @@
       <span routerLink="/home" class="navigation-link">Dislinkt</span>
       <span routerLink="/home" class="navigation-link">Home</span>
       <span routerLink="/chat" class="navigation-link">Chat</span>
+      <span routerLink="/events" class="navigation-link">Events</span>
     </div>
     <div class="right">
       <div>
@@ -32,7 +33,7 @@
           ></app-searched-users>
         </div>
       </div>
-      <span (click)="goToNotifications()" class="material-icons notifications-icon">
+      <span (click)="goToNotifications()" [matBadge]="notifications.length" matBadgeColor="warn" class="material-icons notifications-icon">
         notifications
       </span>
       <span [matMenuTriggerFor]="menu" class="material-icons person-icon">

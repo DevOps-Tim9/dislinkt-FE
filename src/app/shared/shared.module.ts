@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { SearchedUsersComponent } from './searched-users/searched-users.component';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { SearchedUsersComponent } from './searched-users/searched-users.componen
     MatToolbarModule,
     MatInputModule,
     FormsModule,
+    MatBadgeModule
   ],
   exports: [
     HeaderComponent,

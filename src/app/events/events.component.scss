@@ -2,10 +2,15 @@
 
 .container {
     margin-top: 40px;
+    padding-bottom: 50px;
 }
 
 mat-list-item:hover {
     background-color: rgb(237, 237, 237);
+}
+
+th.mat-sort-header-sorted {
+    color: black;
 }
 
 h1 {
@@ -22,15 +27,6 @@ p {
     align-items: center;
 }
 
-.button1 {
-    border: none;
-    border-radius: 50px;
-    padding: 10px 40px 10px 40px;
-    margin: 20px;
-    font-size: 1.2em;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    background: base.$primary-color;
-    color: white;
-  }
+table {
+    width: 100%;
+}
