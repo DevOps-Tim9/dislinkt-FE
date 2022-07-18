@@ -11,6 +11,9 @@ import { UserProfileComponent } from './users/user-profile/user-profile.componen
 import {FollowingComponent} from "./following/following.component";
 import {FollowersComponent} from "./followers/followers.component";
 import {RequestsComponent} from "./requests/requests.component";
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { NotificationSettingsComponent } from './notification-settings/notification-settings.component';
 
 const routes: Routes = [
   {
@@ -36,6 +39,18 @@ const routes: Routes = [
   {
     path: 'home',
     component: FriendsPostsComponent,
+  },
+  {
+    path: 'my-profile',
+    component: MyProfileComponent,
+  },
+  {
+    path: 'notification-settings',
+    component: NotificationSettingsComponent,
+  },
+  {
+    path: 'notifications',
+    component: NotificationsComponent,
   },
   {
     path: 'following',

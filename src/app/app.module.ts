@@ -36,6 +36,10 @@ import { FollowersComponent } from './followers/followers.component';
 import { RequestsComponent } from './requests/requests.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { NotificationSettingsComponent } from './notification-settings/notification-settings.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +60,9 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     FollowingComponent,
     FollowersComponent,
     RequestsComponent,
+    MyProfileComponent,
+    NotificationSettingsComponent,
+    NotificationsComponent
   ],
     imports: [
         BrowserModule,
@@ -77,7 +84,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
         FormsModule,
         MatToolbarModule,
         MatTableModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatCheckboxModule
     ],
   providers: [],
   bootstrap: [AppComponent]
