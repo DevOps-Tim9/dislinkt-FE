@@ -1,0 +1,21 @@
+.my-container {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.conversations {
+    width: 30%;
+    height: 100%;
+}
+
+.chat {
+    margin-left: 15px;
+    width: 70%;
+}
+
+.searched-users {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}

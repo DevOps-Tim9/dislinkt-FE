@@ -1,0 +1,21 @@
+.contianer {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0px 5px 0px;
+    margin: 5px 0px 5px 0px;
+    background-color: lightblue;
+    border-radius: 10px;
+}
+
+.face-size {
+    font-size: 60px;
+}
+
+.right {
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+.contianer:hover {
+    cursor: pointer;
+}

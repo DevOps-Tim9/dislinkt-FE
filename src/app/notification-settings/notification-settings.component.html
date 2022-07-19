@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="right">
+      <h1>Notification settings</h1>
+      <form [formGroup]="notificationsForm" (ngSubmit)="onSubmit()" style="text-align: center;">
+        <p style="text-align: left; padding-left: 40px;">
+            <mat-checkbox formControlName="messageNotifications" (change)="onChangeMessage($event)">
+                Message notifications
+            </mat-checkbox>
+        </p>
+        <p style="text-align: left; padding-left: 40px;">
+            <mat-checkbox formControlName="followNotifications" (change)="onChangeFollow($event)">
+                Follow notifications
+            </mat-checkbox>
+        </p>
+        <p style="text-align: left; padding-left: 40px;">
+            <mat-checkbox formControlName="likeNotifications" (change)="onChangeLike($event)">
+                Like notifications
+            </mat-checkbox>
+        </p>
+        <p style="text-align: left; padding-left: 40px;">
+            <mat-checkbox formControlName="commentNotifications" (change)="onChangeComment($event)">
+                Comment notifications
+            </mat-checkbox>
+        </p>
+        <button class="button1">Save changes</button>
+      </form>
+    </div>
+  </div>
+  

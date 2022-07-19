@@ -1,0 +1,53 @@
+<p>
+  <mat-toolbar>
+    <div class="left">
+      <span routerLink="/home" class="navigation-link">Dislinkt</span>
+      <span routerLink="/home" class="navigation-link">Home</span>
+      <span routerLink="/chat" class="navigation-link">Chat</span>
+      <span routerLink="/events" *ngIf="permissions.includes('get:events')" class="navigation-link">Events</span>
+    </div>
+    <div class="right">
+      <div>
+        <mat-form-field
+          style="width: 250px"
+          class="mat-search-users"
+          appearance="outline"
+        >
+          <input
+            id="search_users_input"
+            placeholder="Search for users..."
+            matInput
+            class="search-users-input"
+            [ngModel]="searchValue"
+            (ngModelChange)="searchUsers($event)"
+            name="searchValue"
+            (focus)="showSearchedUsers = true"
+            (focusout)="showSearchedUsers = false"
+          />
+        </mat-form-field>
+        <div style="position: relative; z-index: 1;" *ngIf="showSearchedUsers">
+          <app-searched-users
+            class="searched-users"
+            [users]="searchedUsers"
+            (selectedUser)="selectedUser($event)"
+          ></app-searched-users>
+        </div>
+      </div>
+      <span (click)="goToNotifications()" [matBadge]="notifications.length" matBadgeColor="warn" class="material-icons notifications-icon">
+        notifications
+      </span>
+      <span [matMenuTriggerFor]="menu" class="material-icons person-icon">
+        person
+      </span>
+      <mat-menu #menu="matMenu">
+        <a routerLink="/my-profile" mat-menu-item>My profile info</a>
+        <a routerLink="/posts-my" mat-menu-item>My posts</a>
+        <a routerLink="/following" mat-menu-item>Following</a>
+        <a routerLink="/followers" mat-menu-item>Followers</a>
+        <a routerLink="/requests" mat-menu-item>Requests</a>
+        <a routerLink="/notification-settings" mat-menu-item>Notification settings</a>
+        <a (click)="logout()" mat-menu-item>Log out</a>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+</p>

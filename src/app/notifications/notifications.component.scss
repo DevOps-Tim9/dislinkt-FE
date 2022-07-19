@@ -1,0 +1,36 @@
+@use '../../base';
+
+.container {
+    margin-top: 40px;
+}
+
+mat-list-item:hover {
+    background-color: rgb(237, 237, 237);
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button1 {
+    border: none;
+    border-radius: 50px;
+    padding: 10px 40px 10px 40px;
+    margin: 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    background: base.$primary-color;
+    color: white;
+  }

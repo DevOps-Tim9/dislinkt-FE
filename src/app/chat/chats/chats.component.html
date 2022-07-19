@@ -1,0 +1,33 @@
+<div class="my-container">
+  <div class="conversations">
+    <h1><b>Chats</b></h1>
+    <div>
+      <mat-form-field style="width: 100%" appearance="outline">
+        <input
+          id="search_chat_input"
+          placeholder="Search for users..."
+          matInput
+          class="message-input"
+          [ngModel]="searchValue"
+          (ngModelChange)="searchUsers($event)"
+          name="searchValue"
+          (focus)="showSearchedUsers = true"
+          (focusout)="showSearchedUsers = false"
+        />
+      </mat-form-field>
+      <div style="position: relative;" *ngIf="showSearchedUsers">
+        <app-searched-users
+          class="searched-users"
+          (selectedUser)="selectedUser($event)"
+          [users]="searchedUsers"
+        ></app-searched-users>
+      </div>
+    </div>
+    <div *ngFor="let item of conversations" (click)="selectChat(item)">
+      <app-conversation [conversation]="item"></app-conversation>
+    </div>
+  </div>
+  <div class="chat">
+    <app-chat *ngIf="chat != null" [chat]="chat"></app-chat>
+  </div>
+</div>

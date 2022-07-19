@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.post {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.new-post {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}

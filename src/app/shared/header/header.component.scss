@@ -1,0 +1,40 @@
+.left {
+    width: 50%;
+}
+
+.right {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.person-icon:hover {
+    cursor: pointer;
+}
+
+.navigation-link {
+    margin: 0px 10px 0px 10px;
+}
+
+.navigation-link:hover {
+    cursor: pointer;
+}
+
+.searched-users {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.mat-search-users {
+    font-size: 12px;
+    margin-right: 8px;
+}
+
+.notifications-icon {
+    margin-right: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}

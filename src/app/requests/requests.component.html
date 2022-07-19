@@ -1,0 +1,33 @@
+
+<div class="mat-elevation-z8">
+  <h3>Requests</h3>
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name</th>
+      <td  (click)="onCLickUser(element)" mat-cell *matCellDef="let element"> {{element['FirstName'] + ' ' + element['LastName']}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef> Username</th>
+      <td  (click)="onCLickUser(element)" mat-cell *matCellDef="let element"> {{element['Username']}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email</th>
+      <td  (click)="onCLickUser(element)" mat-cell *matCellDef="let element"> {{element['Email']}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="approve">
+      <th mat-header-cell *matHeaderCellDef> Approve</th>
+      <td mat-cell *matCellDef="let element" >
+        <button mat-flat-button color="primary" [disabled]="element['RequestStatus']!=0" (click)="onClickApproveBtn(element)">Approve</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button mat-flat-button color="warn"  [disabled]="element['RequestStatus']!=0" (click)="onClickRefuseBtn(element)">Refuse</button>
+      </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
